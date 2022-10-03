@@ -1,15 +1,14 @@
-import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
+import { ThemeProvider } from '@owd/ui/shared/theme';
 
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { Button } from '@mui/material';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="invoice" />
-    </StyledApp>
+    <ThemeProvider>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
+    </ThemeProvider>
   );
 }
 
