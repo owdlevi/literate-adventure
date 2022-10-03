@@ -1,0 +1,24 @@
+{
+  "name": "ui-shared-theme",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/shared/theme/src",
+  "projectType": "library",
+  "tags": ["ui", "theme"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/shared/theme/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/shared/theme"],
+      "options": {
+        "jestConfig": "libs/ui/shared/theme/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
