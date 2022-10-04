@@ -1,6 +1,6 @@
 // @mui
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Grid, RadioGroup, CardActionArea } from '@mui/material';
+import { Box, Grid, RadioGroup, Tooltip, CardActionArea } from '@mui/material';
 // hooks
 import { useSettings } from '@owd/context/settings';
 //
@@ -37,33 +37,35 @@ export default function SettingColorPresets() {
 
           return (
             <Grid key={colorName} item xs={4}>
-              <BoxStyle
-                sx={{
-                  ...(isSelected && {
-                    bgcolor: alpha(colorValue, 0.08),
-                    border: `solid 2px ${colorValue}`,
-                    boxShadow: `inset 0 4px 8px 0 ${alpha(colorValue, 0.24)}`,
-                  }),
-                }}
-              >
-                <Box
+              <Tooltip title={colorName} placement="top">
+                <BoxStyle
                   sx={{
-                    width: 24,
-                    height: 14,
-                    borderRadius: '50%',
-                    bgcolor: colorValue,
-                    transform: 'rotate(-45deg)',
-                    transition: (theme) =>
-                      theme.transitions.create('all', {
-                        easing: theme.transitions.easing.easeInOut,
-                        duration: theme.transitions.duration.shorter,
-                      }),
-                    ...(isSelected && { transform: 'none' }),
+                    ...(isSelected && {
+                      bgcolor: alpha(colorValue, 0.08),
+                      border: `solid 2px ${colorValue}`,
+                      boxShadow: `inset 0 4px 8px 0 ${alpha(colorValue, 0.24)}`,
+                    }),
                   }}
-                />
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 14,
+                      borderRadius: '50%',
+                      bgcolor: colorValue,
+                      transform: 'rotate(-45deg)',
+                      transition: (theme) =>
+                        theme.transitions.create('all', {
+                          easing: theme.transitions.easing.easeInOut,
+                          duration: theme.transitions.duration.shorter,
+                        }),
+                      ...(isSelected && { transform: 'none' }),
+                    }}
+                  />
 
-                <BoxMask value={colorName} />
-              </BoxStyle>
+                  <BoxMask value={colorName} />
+                </BoxStyle>
+              </Tooltip>
             </Grid>
           );
         })}
