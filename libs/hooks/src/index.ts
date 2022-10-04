@@ -1,1 +1,2 @@
-export { useResponsive } from './useResponsive/useResponsive';
+export { useResponsive } from './useResponsive';
+export { useLocalStorage } from './useLocalStorage';

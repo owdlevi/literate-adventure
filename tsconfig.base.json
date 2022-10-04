@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@owd/config/ui": ["libs/config/ui/src/index.ts"],
+      "@owd/context/settings": ["libs/context/settings/src/index.ts"],
       "@owd/hooks": ["libs/hooks/src/index.ts"],
+      "@owd/ui/components": ["libs/ui/components/src/index.ts"],
+      "@owd/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@owd/ui/shared/theme": ["libs/ui/shared/theme/src/index.ts"]
     }
   },
