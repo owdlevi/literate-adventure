@@ -1,0 +1,24 @@
+{
+  "name": "context-settings",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/context/settings/src",
+  "projectType": "library",
+  "tags": ["context", "settings"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/context/settings/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/context/settings"],
+      "options": {
+        "jestConfig": "libs/context/settings/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
